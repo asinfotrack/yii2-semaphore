@@ -1,0 +1,32 @@
+{
+  "name": "asinfotrack/yii2-semaphore",
+  "type": "yii2-extension",
+  "description": "A lightweight semaphore component for the yii2-framework",
+  "keywords": [
+    "yii2",
+    "semaphore",
+    "component"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pascal Mueller",
+      "email": "pascal.mueller@asinfotrack.ch",
+      "homepage": "http://www.asinfotrack.ch"
+    }
+  ],
+  "minimum-stability": "stable",
+  "support": {
+    "source": "https://github.com/asinfotrack/yii2-semaphore",
+    "issues": "https://github.com/asinfotrack/yii2-semaphore/issues"
+  },
+  "require": {
+    "php": ">=7.0",
+    "yiisoft/yii2": "^2.0.20"
+  },
+  "autoload": {
+    "psr-4": {
+      "asinfotrack\\yii2\\semaphore\\": ""
+    }
+  }
+}
