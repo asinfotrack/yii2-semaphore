@@ -26,19 +26,19 @@ to the `require` section of your `composer.json` file.
 All you need to do is add the component config to your corresponding config file.
 
 ```php
-    'components' => [
-        
-        //your other components...
-        
+return [
+    //...
+    'components' => [        
+        //...        
         'semaphore' => [
             //use the file based implementation
             'class' => \asinfotrack\yii2\semaphore\components\FileSemaphore::class,
             'lockFolderAlias' => '@runtime/semaphores',
         ],
-
-        //your other components...
-
+        //...
     ],
+    //...
+];
 ```
 
 ## Usage
@@ -48,9 +48,8 @@ way the handle the case when a semaphore is taken already: the first method wait
 the second doesn't. Without the second param of `acquire()` set to false, the lock is awaited.
 
 For each semaphore you work with a string constant which can be freely defined. In this manner multiple semaphores
-can be used in parallel. Internally the component works with the php `flock()`-function. Therefore you have to keep in 
-mind the [differences](https://www.php.net/manual/en/function.flock.php#refsect1-function.flock-notes) between the 
-underlying operating systems.
+can be used in parallel.
+
 
 ```php
 class SemaphoreDemoController extends \yii\console\Controller
@@ -79,6 +78,14 @@ class SemaphoreDemoController extends \yii\console\Controller
 
 }
 ```
+
+## Implementations
+
+###### File based implementation
+Class: `asinfotrack\yii2\semaphore\components\FileSemaphore`  
+Internally the component works with the php `flock()`-function. Therefore you have to keep in 
+mind the [differences](https://www.php.net/manual/en/function.flock.php#refsect1-function.flock-notes) between the 
+underlying operating systems.
 
 ## Chagelog
 
